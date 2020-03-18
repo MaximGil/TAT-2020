@@ -5,7 +5,7 @@ using DEV_1._2;
 namespace TestInputValues
 {
     [TestClass]
-    public class UnitTest1
+    public class TestValues
     {
         [TestMethod]
         [DataRow(null, 2)]
