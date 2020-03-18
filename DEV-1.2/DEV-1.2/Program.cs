@@ -10,7 +10,7 @@ namespace DEV_1._2
         {
             var inputString = Console.ReadLine();
             var baseSystem = int.Parse(Console.ReadLine());
-            var con = new Conventor(inputString, baseSystem);
+            var con = new Converter(inputString, baseSystem);
             System.Console.WriteLine(con.ConvertToAnotherSystem());
 
         }

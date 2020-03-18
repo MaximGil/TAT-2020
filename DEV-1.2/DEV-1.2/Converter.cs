@@ -4,13 +4,13 @@ using System;
 
 namespace DEV_1._2
 {
-    class Conventor
+    public class Converter
     {
         private string _inputString;
         private int _baseSystem;
 
 
-        public Conventor(string inputString, int baseSystem)
+        public Converter(string inputString, int baseSystem)
         {
             _inputString = inputString;
             _baseSystem = baseSystem;
@@ -42,7 +42,7 @@ namespace DEV_1._2
         }
         private void ValidBaseSystem(int baseSystem)
         {
-            if (baseSystem <= 2 || baseSystem >= 20)
+            if (baseSystem < 2 || baseSystem > 20)
             {
                 throw new IndexOutOfRangeException();
             }
@@ -63,11 +63,32 @@ namespace DEV_1._2
                 throw new FormatException();
             }
         }
+        private void MaxIntValue(string number)
+        {
+            int maxValue;
+            if (!(int.TryParse(number, out maxValue)))
+            {
+                throw new OverflowException();
+            }
+        }
+        private void CheckNegativeOfNonDigitString(string number)
+        {
+            char[] array = number.ToCharArray();
+            for (int i = 0; i < array.Length; i++)
+            {
+                if ((i == 0 && array[i] == '-') || !(Char.IsDigit(array[i])))
+                {
+                    throw new FormatException();
+                }
+            }
+        }
         private void CheckInputValues(string number, int value)
         {
             CheckNullString(number);
             CheckEmptyString(number);
             ValidBaseSystem(value);
+            MaxIntValue(number);
+            CheckNegativeOfNonDigitString(number);
         }
     }
 }
