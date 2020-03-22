@@ -24,6 +24,7 @@ namespace DEV_1._3
             _numberOfBus = numberOfBus;
             _maxSpeed = maxSpeed; 
             CheckObjectsForNull();
+            ChechAvailableSymbols();
 
         }
 
@@ -42,18 +43,18 @@ namespace DEV_1._3
                 throw new ArgumentNullException();
             }
         }
-        private void CheckModelIsEmpty()
+        private void ChechAvailableSymbols()
         {
             foreach(var chars in _type)
             {
-                if ((Char.IsDigit(chars)))
+                if (!(Char.IsLetterOrDigit(chars)))
                 {
                     throw new FormatException();
                 }
             }
             foreach(var chars in _numberOfBus)
             {
-                if ((Char.IsDigit(chars)))
+                if (!(Char.IsLetterOrDigit(chars)))
                 {
                     throw new FormatException();
                 }

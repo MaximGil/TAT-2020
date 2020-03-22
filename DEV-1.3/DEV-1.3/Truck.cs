@@ -22,6 +22,7 @@ namespace DEV_1._3
             _color = color;
             _make = make;
             CheckObjectsForNull();
+            ChechAvailableSymbols();
         }
 
         public void GetTruckInfo()
@@ -37,6 +38,24 @@ namespace DEV_1._3
             {
                 throw new ArgumentNullException();
             }
+        }
+        private void ChechAvailableSymbols()
+        {
+            foreach (var chars in _model)
+            {
+                if (!(Char.IsLetterOrDigit(chars)))
+                {
+                    throw new FormatException();
+                }
+            }
+            foreach (var chars in _make)
+            {
+                if (!(Char.IsLetterOrDigit(chars)))
+                {
+                    throw new FormatException();
+                }
+            }
+
         }
     }
 }
