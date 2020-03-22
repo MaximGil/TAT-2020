@@ -14,12 +14,14 @@ namespace DEV_1._3
 
         public Truck(Engine engine, Transmission transmission, Chassis chassis, string model, string color, string make)
         {
+           
             this.engine = engine;
             this.transmission = transmission;
             this.chassis = chassis;
             _model = model;
             _color = color;
             _make = make;
+            CheckObjectsForNull();
         }
 
         public void GetTruckInfo()
@@ -28,6 +30,13 @@ namespace DEV_1._3
             Console.WriteLine($"Information about engine truck: {engine.GetInfo()}");
             Console.WriteLine($"Information about transmission truck: {transmission.GetInfo()}");
             Console.WriteLine($"Information about chassis truck: {chassis.GetInfo()}");
+        }
+        private void CheckObjectsForNull()
+        {
+            if (engine == null || transmission == null || chassis == null)
+            {
+                throw new ArgumentNullException();
+            }
         }
     }
 }

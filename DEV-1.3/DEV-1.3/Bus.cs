@@ -5,19 +5,26 @@ namespace DEV_1._3
 {
     class Bus
     {
-        Engine engine = new Engine(200, 4.0, "petrol", "128BN234A");
-        Transmission transmission =  new Transmission("automatic", 6, "Ford");
-        Chassis chassis = new Chassis(6, "B768CD0", 2760);
+        Engine engine ;
+        Transmission transmission;
+        Chassis chassis; 
 
         string _type;
         string _numberOfBus;
         int _maxSpeed;
 
-        public Bus(string type, string numberOfBus, int maxSpeed)
+
+        public Bus(Engine engine, Transmission transmission, Chassis chassis, string type, string numberOfBus, int maxSpeed)
         {
+           
+            this.engine = engine;
+            this.transmission = transmission;
+            this.chassis = chassis;
             _type = type;
             _numberOfBus = numberOfBus;
-            _maxSpeed = maxSpeed;
+            _maxSpeed = maxSpeed; 
+            CheckObjectsForNull();
+
         }
 
         public  void GetBusInfo()
@@ -26,8 +33,32 @@ namespace DEV_1._3
             Console.WriteLine($"Information about engine bus: {engine.GetInfo()}");
             Console.WriteLine($"Information about transmission bus: {transmission.GetInfo()}");
             Console.WriteLine($"Information about chassis bus: {chassis.GetInfo()}");
+        }
 
-
+        private void CheckObjectsForNull()
+        {
+            if (engine == null || transmission == null || chassis == null)
+            {
+                throw new ArgumentNullException();
+            }
+        }
+        private void CheckModelIsEmpty()
+        {
+            foreach(var chars in _type)
+            {
+                if ((Char.IsDigit(chars)))
+                {
+                    throw new FormatException();
+                }
+            }
+            foreach(var chars in _numberOfBus)
+            {
+                if ((Char.IsDigit(chars)))
+                {
+                    throw new FormatException();
+                }
+            }
+            
         }
     }
 }
