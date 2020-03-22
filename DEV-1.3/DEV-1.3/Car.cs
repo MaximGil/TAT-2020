@@ -23,7 +23,7 @@ namespace DEV_1._3
             this._color = color;
         }
 
-        public void GetInfo()
+        public void GetCarInfo()
         {
             Console.WriteLine($"Information about car: Model: {_model}, Number: {_number}, Color: {_color}");
             Console.WriteLine($"information abour machine engine: {engine.GetInfo()}");

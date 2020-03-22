@@ -20,12 +20,12 @@ namespace DEV_1._3
             _maxSpeed = maxSpeed;
         }
 
-        public  void GetInfo()
+        public  void GetBusInfo()
         {
             Console.WriteLine($"Information about bus:Type of bus: {_type}, Number of bus: {_numberOfBus}, Maximal speed: {_maxSpeed} ");
             Console.WriteLine($"Information about engine bus: {engine.GetInfo()}");
             Console.WriteLine($"Information about transmission bus: {transmission.GetInfo()}");
-            Console.WriteLine($"Information about chassis bus: {chassis.GetInfo()} ");
+            Console.WriteLine($"Information about chassis bus: {chassis.GetInfo()}");
 
 
         }
