@@ -3,7 +3,7 @@
 
 namespace DEV_1._3
 {
-    class Moped
+   public class Moped
     {   string _model;
         string _color;
         string _make; 

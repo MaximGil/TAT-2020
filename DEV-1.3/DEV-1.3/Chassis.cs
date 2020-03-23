@@ -1,9 +1,8 @@
-﻿
-using System;
+﻿using System;
 
 namespace DEV_1._3
 {
-    class Chassis
+    public class Chassis
     {
         int _numberOfWheels;
         string _numberChassis;

@@ -3,7 +3,7 @@ using System;
 
 namespace DEV_1._3
 {
-    class Bus
+   public class Bus
     {
         Engine engine ;
         Transmission transmission;
