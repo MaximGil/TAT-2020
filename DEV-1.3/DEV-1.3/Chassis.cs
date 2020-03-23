@@ -47,9 +47,9 @@ namespace DEV_1._3
 
         public Chassis(int numberOfWheels, string numberChassis, int permissibleLoad)
         {
-            _numberOfWheels = numberOfWheels;
+            numberOfWheels = numberOfWheels;
             _numberChassis = numberChassis;
-            _permissibleLoad = permissibleLoad;
+            permissibleLoad = permissibleLoad;
             ChechAvailableSymbols();
         }
         public virtual string GetInfo()

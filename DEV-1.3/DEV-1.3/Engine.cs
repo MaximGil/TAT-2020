@@ -3,13 +3,13 @@ using System;
 
 namespace DEV_1._3
 {
-    class Engine
+    public class Engine
     {
         int _power;
         double _capacity;
         string _typeEngine;
         string _serialNumber;
-public double capacity
+        public double Capacity
         {
             get
             {
@@ -17,7 +17,7 @@ public double capacity
             }
             set
             {
-                if(value > 0)
+                if (value > 0)
                 {
                     _capacity = value;
                 }
@@ -27,7 +27,7 @@ public double capacity
                 }
             }
         }
-        public int power
+        public int Power
         {
             get
             {
@@ -39,21 +39,25 @@ public double capacity
                 {
                     _power = value;
                 }
+                else
+                {
+                    throw new ArgumentNullException();
+                }
             }
         }
+
         public Engine(int power, double capacity, string typeEngine, string serialNumber)
         {
-            _power = power;
-            _capacity = capacity;
+            Power = power;
+            Capacity = capacity;
             _typeEngine = typeEngine;
             _serialNumber = serialNumber;
             ChechAvailableSymbols();
-
         }
 
         public virtual string GetInfo()
         {
-            return $"Engine power: {_power}, Engine capacity: {_capacity}, Type engine: {_typeEngine} , Serial Number: {_serialNumber}";
+            return $"Engine power: {Power}, Engine capacity: {Capacity}, Type engine: {_typeEngine} , Serial Number: {_serialNumber}";
         }
         private void ChechAvailableSymbols()
         {

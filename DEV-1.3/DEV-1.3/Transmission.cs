@@ -3,7 +3,7 @@ using System;
 
 namespace DEV_1._3
 {
-    class Transmission
+   public class Transmission
     {
         string _typeOfTransmission;
         int _numberOfGears;
@@ -30,7 +30,7 @@ namespace DEV_1._3
         public Transmission(string typeOfTransmission, int numberOfGears, string manufacturer)
         {
             _typeOfTransmission = typeOfTransmission;
-            _numberOfGears = numberOfGears;
+            numberOfGears = numberOfGears;
             _manufacturer = manufacturer;
             ChechAvailableSymbols();
         }
