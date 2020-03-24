@@ -56,6 +56,11 @@
     <Compile Include="TestEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestTransmission.cs" />
+    <Compile Include="TestChassis.cs" />
+    <Compile Include="TestCar.cs" />
+    <Compile Include="TestBus.cs" />
+    <Compile Include="TestTruck.cs" />
+    <Compile Include="TestMoped.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

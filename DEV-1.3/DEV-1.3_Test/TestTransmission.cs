@@ -1,9 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DEV_1._3;
-using Assert = NUnit.Framework.Assert;
 using System;
-
 namespace DEV_1._3_Test
 {
     [TestClass]

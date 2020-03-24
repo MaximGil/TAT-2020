@@ -3,7 +3,7 @@
 
 namespace DEV_1._3
 {
-    class Truck
+  public class Truck
     {
         Engine engine;
         Transmission transmission;
