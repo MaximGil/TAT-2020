@@ -8,10 +8,10 @@ namespace DEV_1._2
     {
         static void Main(string[] args)
         {
-            var inputString = Console.ReadLine();
+            var inputString = args[0];
             var baseSystem = int.Parse(Console.ReadLine());
-            var con = new Converter(inputString, baseSystem);
-            System.Console.WriteLine(con.ConvertToAnotherSystem());
+            var converter = new Converter(inputString.ToString(), baseSystem);
+            Console.WriteLine(converter.ConvertToAnotherSystem());
 
         }
     }

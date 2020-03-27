@@ -8,7 +8,11 @@ namespace DEV_1._2
     {
         private string _inputString;
         private int _baseSystem;
-
+        readonly int minBaseSystem = 2;
+        readonly int maxBaseSystem = 20;
+        readonly int decimalBaseSystem = 10;
+        readonly char[] baseChars = new char[] { '0','1','2','3','4','5','6','7','8','9',
+            'A','B','C','D','E','F','G','H','I'};
 
         public Converter(string inputString, int baseSystem)
         {
@@ -26,10 +30,8 @@ namespace DEV_1._2
             CheckInputValues(_inputString, _baseSystem);
             do
             {
-
                 result = GetIntToString(number % _baseSystem) + result;
                 number = number / _baseSystem;
-
             }
             while (number > 0);
             return result;
@@ -42,11 +44,10 @@ namespace DEV_1._2
         /// <returns> convert  string</returns>
         private string GetIntToString(int baseSystem)
         {
-            char[] baseChars = new char[] { '0','1','2','3','4','5','6','7','8','9',
-            'A','B','C','D','E','F','G','H','I'};
-            if (baseSystem >= 10)
+           
+            if (baseSystem >= decimalBaseSystem)
             {
-                return baseChars[baseSystem - 10].ToString();
+                return baseChars[baseSystem - decimalBaseSystem].ToString();
             }
             return baseSystem.ToString();
         }
@@ -56,7 +57,7 @@ namespace DEV_1._2
         /// <param name="baseSystem">input baseSystem</param>
         private void ValidBaseSystem(int baseSystem)
         {
-            if (baseSystem < 2 || baseSystem > 20)
+            if (baseSystem < minBaseSystem || baseSystem > maxBaseSystem)
             {
                 throw new IndexOutOfRangeException();
             }
