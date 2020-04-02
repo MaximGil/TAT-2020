@@ -13,6 +13,7 @@ namespace DEV_1._2
             var converter = new Converter(inputString.ToString(), baseSystem);
             Console.WriteLine(converter.ConvertToAnotherSystem());
 
+   
         }
     }
 }

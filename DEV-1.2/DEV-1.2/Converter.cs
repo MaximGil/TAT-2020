@@ -16,8 +16,18 @@ namespace DEV_1._2
 
         public Converter(string inputString, int baseSystem)
         {
+            CheckNullOrEmptyString(inputString);
+            CheckMaxIntValue(inputString);
+            CheckNegativeOfNonDigitString(inputString);
             _inputString = inputString;
-            _baseSystem = baseSystem;
+            if (baseSystem < minBaseSystem || baseSystem > maxBaseSystem)
+            {
+                throw new IndexOutOfRangeException();
+            }
+            else
+            {
+                _baseSystem = baseSystem;
+            }
         }
         /// <summary>
         /// get input string and baseSystem and convert her in another сalculus system
@@ -25,16 +35,15 @@ namespace DEV_1._2
         /// <returns> string in another calculus system</returns>
         public string ConvertToAnotherSystem()
         {
-            string result = string.Empty;
-            int number = int.Parse(_inputString);
-            CheckInputValues(_inputString, _baseSystem);
+            string convertString = string.Empty;
+            int inputNumber = int.Parse(_inputString);
             do
             {
-                result = GetIntToString(number % _baseSystem) + result;
-                number = number / _baseSystem;
+                convertString = GetIntToString(inputNumber % _baseSystem) + convertString;
+                inputNumber = inputNumber / _baseSystem;
             }
-            while (number > 0);
-            return result;
+            while (inputNumber > 0);
+            return convertString;
         }
         /// <summary>
         /// 
@@ -44,7 +53,7 @@ namespace DEV_1._2
         /// <returns> convert  string</returns>
         private string GetIntToString(int baseSystem)
         {
-           
+
             if (baseSystem >= decimalBaseSystem)
             {
                 return baseChars[baseSystem - decimalBaseSystem].ToString();
@@ -52,45 +61,22 @@ namespace DEV_1._2
             return baseSystem.ToString();
         }
         /// <summary>
-        /// check the input system which should be more than 20 and less than 2
-        /// </summary>
-        /// <param name="baseSystem">input baseSystem</param>
-        private void ValidBaseSystem(int baseSystem)
-        {
-            if (baseSystem < minBaseSystem || baseSystem > maxBaseSystem)
-            {
-                throw new IndexOutOfRangeException();
-            }
-        }
-        /// <summary>
         /// check input string which should not equal "null" 
         /// </summary>
         /// <param name="inputString"> input value</param>
-        private void CheckNullString(string inputString)
+        private void CheckNullOrEmptyString(string inputString)
         {
-
-            if (inputString == null)
+            if (String.IsNullOrEmpty(inputString))
             {
                 throw new ArgumentNullException();
             }
-        }
-        /// <summary>
-        /// check input string which should not be an empty
-        /// </summary>
-        /// <param name="inputString">input value</param>
-        private void CheckEmptyString(string inputString)
-        {
 
-            if (inputString == string.Empty)
-            {
-                throw new FormatException();
-            }
         }
         /// <summary>
         /// check maximal int value
         /// </summary>
         /// <param name="number"> input string</param>
-        private void MaxIntValue(string number)
+        private void CheckMaxIntValue(string number)
         {
             int maxValue;
             if (!(int.TryParse(number, out maxValue)))
@@ -112,19 +98,6 @@ namespace DEV_1._2
                     throw new FormatException();
                 }
             }
-        } 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="number"></param>
-        /// <param name="value"></param>
-        private void CheckInputValues(string number, int value)
-        {
-            CheckNullString(number);
-            CheckEmptyString(number);
-            ValidBaseSystem(value);
-            MaxIntValue(number);
-            CheckNegativeOfNonDigitString(number);
         }
     }
 }
