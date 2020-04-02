@@ -44,7 +44,7 @@ namespace DEV_1._4
         /// <returns>Returns flight time</returns>
         public double GetFlyTime(Coordinate inputCoordinate)
         {
-            if (this.startPosition.GetDistance(inputCoordinate)== 0 )
+            if (this.startPosition.GetDistance(inputCoordinate) == 0 )
         {
                 throw new ArgumentNullException();
         }

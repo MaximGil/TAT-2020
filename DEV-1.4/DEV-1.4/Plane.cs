@@ -9,6 +9,7 @@ namespace DEV_1._4
         private double speed = 200.0;
         readonly static double intervalDistance = 10.0;
         readonly static double increaseSpeed = 10.0;
+        readonly static double maxAvailableSpeed = 500;
         double time;
         double distance;
 
@@ -42,7 +43,7 @@ namespace DEV_1._4
                 time += intervalDistance / speed; 
                 speed += increaseSpeed;    
             }
-            if (speed >= 500)
+            if (speed >= maxAvailableSpeed)
             {
                 throw new IndexOutOfRangeException();
             }
