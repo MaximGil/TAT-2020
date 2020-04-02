@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Text;
 
 namespace DEV_1._3
 {
@@ -12,30 +12,26 @@ namespace DEV_1._3
         string _color;
         string _make; // make = марка 
 
-        public Truck(Engine engine, Transmission transmission, Chassis chassis, string model, string color, string make)
+        public Truck(Engine engine, Transmission transmission, Chassis chassis, string model, string color, string make) : base(engine, transmission, chassis)
         {
-            this._engine = engine;
-            this._transmission = transmission;
-            this._chassis = chassis;
+            _engine = engine;
+            _transmission = transmission;
+            _chassis = chassis;
             _model = model;
             _color = color;
             _make = make;
+            CheckAvailableSymbolsInString();
         }
 
         public override string GetInfo()
         {
-            throw new NotImplementedException();
+            var informationAboutTruck = new StringBuilder();
+            informationAboutTruck.AppendLine($"Information about Truck: Model - {_model}, Make - {_make}, Color - {_color}");
+            informationAboutTruck.AppendLine(base.GetInfo());
+            return informationAboutTruck.ToString();
         }
 
-        public void GetTruckInfo()
-        {
-            Console.WriteLine($"Information about Truck: Model - {_model}, Make - {_make}, Color - {_color}");
-            Console.WriteLine($"Information about engine truck: {_engine.GetInfo()}");
-            Console.WriteLine($"Information about transmission truck: {_transmission.GetInfo()}");
-            Console.WriteLine($"Information about chassis truck: {_chassis.GetInfo()}");
-        }
-
-        private void ChechAvailableSymbols()
+        private void CheckAvailableSymbolsInString()
         {
             foreach (var chars in _model)
             {

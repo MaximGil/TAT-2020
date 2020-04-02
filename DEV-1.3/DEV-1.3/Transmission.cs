@@ -8,7 +8,9 @@ namespace DEV_1._3
         Mechanical,
         Electrical,
         Hydrovolume,
-        Combined
+        Combined,
+        Auto,
+        Manual
     };
     public class Transmission
     {
