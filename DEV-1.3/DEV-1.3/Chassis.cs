@@ -47,7 +47,7 @@ namespace DEV_1._3
         }
         public virtual string GetInfo()
         {
-            return $"Number of Wheels: {_numberOfWheels},  Number Of Classis {_numberChassis}, Permissible load {_permissibleLoad}";
+            return $"Number of Wheels: {_numberOfWheels},  Number Of Classis: {_numberChassis}, Permissible load: {_permissibleLoad}";
         }
 
         private void ChechAvailableSymbols()

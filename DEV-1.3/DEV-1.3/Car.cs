@@ -6,40 +6,25 @@ namespace DEV_1._3
     public class Car : Vehicle
     {
 
-        Engine engine;
-        Transmission transmission;
-        Chassis chassis;
+        Engine _engine;
+        Transmission _transmission;
+        Chassis _chassis;
 
         string _model;
         string _make;
         string _color;
-
+ 
         public Car(Engine engine, Transmission transmission, Chassis chassis, string model, string make, string color) : base(engine, transmission, chassis)
         {
-            this.engine = engine;
-            this.transmission = transmission;
-            this.chassis = chassis;
+            _engine = engine;
+            _transmission = transmission;
+            _chassis = chassis;
             _model = model;
             _make = make;
             _color = color;
             CheckAvailableSymbols();
-            CheckObjectsForNull();
         }
 
-        public void GetCarInfo()
-        {
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-        }
-        private void CheckObjectsForNull()
-        {
-            if (engine == null || transmission == null || chassis == null)
-            {
-                throw new ArgumentNullException();
-            }
-        }
         private void CheckAvailableSymbols()
         {
             foreach (var chars in _model)
@@ -63,10 +48,8 @@ namespace DEV_1._3
         {
             var informationAboutCar = new StringBuilder();
             informationAboutCar.AppendLine($"Information about car: Model: {_model}, Number: {_make}, Color: {_color}");
-            informationAboutCar.AppendLine($"information abour machine engine: {engine.GetInfo()}");
-            informationAboutCar.AppendLine($"information abour machine transmission: {transmission.GetInfo()}");
-            informationAboutCar.AppendLine($"information abour machine chassis: {chassis.GetInfo()}");
-            return informationAboutCar.ToString() ;
+            informationAboutCar.AppendLine(base.GetInfo());
+            return informationAboutCar.ToString();
         }
     }
 }
