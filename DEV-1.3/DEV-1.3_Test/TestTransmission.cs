@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DEV_1._3;
-using System;
+
 namespace DEV_1._3_Test
 {
     [TestClass]
@@ -9,20 +9,20 @@ namespace DEV_1._3_Test
     {
         [TestMethod]
         [ExpectedException(typeof(FormatException))]
-        [DataRow("ZDADJB#34", 8, "ADAR1234AD")]
-        [DataRow("ZDADJB#34", 12, "ADAR12%$AD")]
-        [DataRow("ZDADJB#34", 12, "ADAR1%^4AD")]
-        public void TestInputValuesIfStringHasInvalidSymbols(string typeOfTransmission, int numberOfGears, string manufacturer)
+        [DataRow(8, "ADAR1234AD")]
+        [DataRow(12, "ADAR12%$AD")]
+        [DataRow(12, "ADAR1%^4AD")]
+        public void TestInputValuesIfStringHasInvalidSymbols(int numberOfGears, string manufacturer)
         {
-            var actual = new Transmission(typeOfTransmission, numberOfGears, manufacturer);
+            var actual = new Transmission(typeOfTransmission.Electrical, numberOfGears, manufacturer);
         }
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        [DataRow("ZDADJB#34", -1, "ADAR1234AD")]
+        [DataRow(-1, "ADAR1234AD")]
 
-        public void TestInputNegativeValues(string typeOfTransmission, int numberOfGears, string manufacturer)
+        public void TestInputNegativeValues(int numberOfGears, string manufacturer)
         {
-            var actual = new Transmission(typeOfTransmission, numberOfGears, manufacturer);
+            var actual = new Transmission(typeOfTransmission.Hydrovolume, numberOfGears, manufacturer);
         }
     }
 }

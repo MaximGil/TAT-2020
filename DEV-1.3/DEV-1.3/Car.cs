@@ -1,10 +1,11 @@
 ﻿using System;
-
+using System.Text;
 
 namespace DEV_1._3
 {
-   public class Car { 
-    
+    public class Car : Vehicle
+    {
+
         Engine engine;
         Transmission transmission;
         Chassis chassis;
@@ -13,25 +14,24 @@ namespace DEV_1._3
         string _make;
         string _color;
 
-        public Car(Engine engine, Transmission transmission, Chassis chassis, string model, string number, string color)
+        public Car(Engine engine, Transmission transmission, Chassis chassis, string model, string make, string color) : base(engine, transmission, chassis)
         {
-           
             this.engine = engine;
             this.transmission = transmission;
             this.chassis = chassis;
             _model = model;
-            _make = number;
-            this._color = color;
+            _make = make;
+            _color = color;
+            CheckAvailableSymbols();
             CheckObjectsForNull();
-            ChechAvailableSymbols();
         }
 
         public void GetCarInfo()
         {
-            Console.WriteLine($"Information about car: Model: {_model}, Number: {_make}, Color: {_color}");
-            Console.WriteLine($"information abour machine engine: {engine.GetInfo()}");
-            Console.WriteLine($"information abour machine transmission: {transmission.GetInfo()}");
-            Console.WriteLine($"information abour machine chassis: {chassis.GetInfo()}");
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
         }
         private void CheckObjectsForNull()
         {
@@ -40,7 +40,7 @@ namespace DEV_1._3
                 throw new ArgumentNullException();
             }
         }
-        private void ChechAvailableSymbols()
+        private void CheckAvailableSymbols()
         {
             foreach (var chars in _model)
             {
@@ -57,6 +57,16 @@ namespace DEV_1._3
                 }
             }
 
+        }
+
+        public override string GetInfo()
+        {
+            var informationAboutCar = new StringBuilder();
+            informationAboutCar.AppendLine($"Information about car: Model: {_model}, Number: {_make}, Color: {_color}");
+            informationAboutCar.AppendLine($"information abour machine engine: {engine.GetInfo()}");
+            informationAboutCar.AppendLine($"information abour machine transmission: {transmission.GetInfo()}");
+            informationAboutCar.AppendLine($"information abour machine chassis: {chassis.GetInfo()}");
+            return informationAboutCar.ToString() ;
         }
     }
 }

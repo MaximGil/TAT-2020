@@ -7,48 +7,42 @@ namespace DEV_1._3
         int _numberOfWheels;
         string _numberChassis;
         int _permissibleLoad;
-        public int numberOfWheels
+        public int NumberOfWheels
         {
-            get
-            {
-                return _numberOfWheels;
-            }
+            get => _numberOfWheels;
             set
             {
-                if (value > 0)
+                if (value <= 0)
+                {
+                    throw new ArgumentNullException();
+                }
+                else
                 {
                     _numberOfWheels = value;
                 }
-                else
-                {
-                    throw new ArgumentNullException();
-                }
             }
         }
-        public int permissibleLoad
+        public int PermissibleLoad
         {
-            get
-            {
-                return _permissibleLoad;
-            }
+            get => _permissibleLoad;
             set
             {
-                if (value > 0)
+                if (value <= 0)
                 {
-                    _permissibleLoad = value;
+                    throw new ArgumentNullException();
                 }
                 else
                 {
-                    throw new ArgumentNullException();
+                    _permissibleLoad = value;
                 }
             }
         }
 
         public Chassis(int numberOfWheels, string numberChassis, int permissibleLoad)
         {
-            numberOfWheels = numberOfWheels;
+            NumberOfWheels = numberOfWheels;
             _numberChassis = numberChassis;
-            permissibleLoad = permissibleLoad;
+            PermissibleLoad = permissibleLoad;
             ChechAvailableSymbols();
         }
         public virtual string GetInfo()

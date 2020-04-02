@@ -13,8 +13,8 @@ namespace DEV_1._3_Test
         [DataRow("Ele#ctric", "123d%")]
         public void TestInputInvalidString(string model, string number)
         {
-            var actual = new Bus(new Engine(200, 4.0, "Petrol", "12BNLAD23"),
-                                   new Transmission("automatic", 6, "Ford"),
+            var actual = new Bus(new Engine(typeEngine.Electric,200, 4.0, "12BNLAD23"),
+                                   new Transmission(typeOfTransmission.Combined, 6, "Ford"),
                                    new Chassis(6, "B768CD0", 2760),
                                    model, number, 90);
 

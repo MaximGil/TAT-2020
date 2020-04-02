@@ -9,13 +9,13 @@ namespace DEV_1._3_Test
     {
         [TestMethod]
         [ExpectedException(typeof(FormatException))]
-        [DataRow(230, 5.7, "ZDADJB#34", "ADAR1234AD")]
-        [DataRow(230, 5.7, "ZDADJB#34", "ADAR12%$AD")]
-        [DataRow(230, 5.7, "ZDADJB#34", "ADAR1%^4AD")]
-        public void TestInputValuesIfStringHasInvalidSymbols(int power, double capacity, string typeEngine, string serialNumber)
+        [DataRow(230, 5.7, "ADAR1234AD")]
+        [DataRow(230, 5.7, "ADAR12%$AD")]
+        [DataRow(230, 5.7, "ADAR1%^4AD")]
+        public void TestInputValuesIfStringHasInvalidSymbols(int power, double capacity, string serialNumber)
         {
 
-            var actual = new Engine(power, capacity, typeEngine, serialNumber);
+            var actual = new Engine(typeEngine.Hybrid,power, capacity, serialNumber);
 
 
         }
@@ -27,7 +27,7 @@ namespace DEV_1._3_Test
 
         public void TestInputNegativeValue(int power, double capacity)
         {
-            var actual = new Engine(power, capacity, "Petrol", "VDADR23asd");
+            var actual = new Engine(typeEngine.Electric,power, capacity, "VDADR23asd");
 
         }
 
@@ -37,20 +37,20 @@ namespace DEV_1._3_Test
     {
         [TestMethod]
         [ExpectedException(typeof(FormatException))]
-        [DataRow("ZDADJB#34", 8, "ADAR1234AD")]
-        [DataRow("ZDADJB#34", 12, "ADAR12%$AD")]
-        [DataRow("ZDADJB#34", 12, "ADAR1%^4AD")]
-        public void TestInputValuesIfStringHasInvalidSymbols(string typeOfTransmission, int numberOfGears, string manufacturer)
+        [DataRow(8, "ADAR1234AD")]
+        [DataRow(12, "ADAR12%$AD")]
+        [DataRow(12, "ADAR1%^4AD")]
+        public void TestInputValuesIfStringHasInvalidSymbols(int numberOfGears, string manufacturer)
         {
-            var actual = new Transmission(typeOfTransmission, numberOfGears, manufacturer);
+            var actual = new Transmission(typeOfTransmission.Electrical, numberOfGears, manufacturer);
         }
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        [DataRow("ZDADJB#34", -1, "ADAR1234AD")]
+        [DataRow(-1, "ADAR1234AD")]
 
-        public void TestInputNegativeValues(string typeOfTransmission, int numberOfGears, string manufacturer)
+        public void TestInputNegativeValues( int numberOfGears, string manufacturer)
         {
-            var actual = new Transmission(typeOfTransmission, numberOfGears, manufacturer);
+            var actual = new Transmission(typeOfTransmission.Hydrovolume, numberOfGears, manufacturer);
         }
     }
 }

@@ -3,50 +3,50 @@ using System;
 
 namespace DEV_1._3
 {
-   public class Transmission
+    public enum typeOfTransmission
     {
-        string _typeOfTransmission;
+        Mechanical,
+        Electrical,
+        Hydrovolume,
+        Combined
+    };
+    public class Transmission
+    {
+
+        public typeOfTransmission typeOfTransmission { get; }
         int _numberOfGears;
         string _manufacturer;
 
         public int numberOfGears
         {
-            get
-            {
-                return _numberOfGears;
-            }
+            get => _numberOfGears;
             set
             {
-                if (value > 0)
-                {
-                    _numberOfGears = value;
-                }
-                else
+                if (value <= 0)
                 {
                     throw new ArgumentNullException();
                 }
-            }
-        }
-        public Transmission(string typeOfTransmission, int numberOfGears, string manufacturer)
-        {
-            _typeOfTransmission = typeOfTransmission;
-            numberOfGears = numberOfGears;
-            _manufacturer = manufacturer;
-            ChechAvailableSymbols();
-        }
-        public virtual string GetInfo()
-        {
-            return $"Type of transmission {_typeOfTransmission}, Number of gears: {_numberOfGears}, Manufacter: {_manufacturer}";
-        }
-        private void ChechAvailableSymbols()
-        {
-            foreach (var chars in _typeOfTransmission)
-            {
-                if (!(Char.IsLetterOrDigit(chars)))
+                else
                 {
-                    throw new FormatException();
+                    _numberOfGears = value;
                 }
             }
+        }
+
+        public Transmission(typeOfTransmission typeOfTransmission, int numberOfGears, string manufacturer)
+        {
+            this.typeOfTransmission = typeOfTransmission;
+            _numberOfGears = numberOfGears;
+            _manufacturer = manufacturer;
+            CheckAvailableSymbolsContainsString();
+        }
+
+        public virtual string GetInfo()
+        {
+            return $"Type of transmission {typeOfTransmission}, Number of gears: {_numberOfGears}, Manufacter: {_manufacturer}";
+        }
+        private void CheckAvailableSymbolsContainsString()
+        {
             foreach (var chars in _manufacturer)
             {
                 if (!(Char.IsLetterOrDigit(chars)))

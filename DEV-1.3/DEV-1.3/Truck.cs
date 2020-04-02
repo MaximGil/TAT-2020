@@ -3,42 +3,38 @@
 
 namespace DEV_1._3
 {
-  public class Truck
+    public class Truck : Vehicle
     {
-        Engine engine;
-        Transmission transmission;
-        Chassis chassis;
+        Engine _engine;
+        Transmission _transmission;
+        Chassis _chassis;
         string _model;
         string _color;
-        string _make; // марка грузовика 
+        string _make; // make = марка 
 
         public Truck(Engine engine, Transmission transmission, Chassis chassis, string model, string color, string make)
         {
-           
-            this.engine = engine;
-            this.transmission = transmission;
-            this.chassis = chassis;
+            this._engine = engine;
+            this._transmission = transmission;
+            this._chassis = chassis;
             _model = model;
             _color = color;
             _make = make;
-            CheckObjectsForNull();
-            ChechAvailableSymbols();
+        }
+
+        public override string GetInfo()
+        {
+            throw new NotImplementedException();
         }
 
         public void GetTruckInfo()
         {
             Console.WriteLine($"Information about Truck: Model - {_model}, Make - {_make}, Color - {_color}");
-            Console.WriteLine($"Information about engine truck: {engine.GetInfo()}");
-            Console.WriteLine($"Information about transmission truck: {transmission.GetInfo()}");
-            Console.WriteLine($"Information about chassis truck: {chassis.GetInfo()}");
+            Console.WriteLine($"Information about engine truck: {_engine.GetInfo()}");
+            Console.WriteLine($"Information about transmission truck: {_transmission.GetInfo()}");
+            Console.WriteLine($"Information about chassis truck: {_chassis.GetInfo()}");
         }
-        private void CheckObjectsForNull()
-        {
-            if (engine == null || transmission == null || chassis == null)
-            {
-                throw new ArgumentNullException();
-            }
-        }
+
         private void ChechAvailableSymbols()
         {
             foreach (var chars in _model)

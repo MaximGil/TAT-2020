@@ -3,71 +3,62 @@ using System;
 
 namespace DEV_1._3
 {
+   public enum typeEngine
+    {
+        Petrol, Diesel, Electric, Hybrid
+    };
     public class Engine
     {
+        public typeEngine typeEngine { get; private set; }
         int _power;
         double _capacity;
-        string _typeEngine;
+    
         string _serialNumber;
         public double Capacity
         {
-            get
-            {
-                return _capacity;
-            }
+            get => _capacity;
             set
             {
-                if (value > 0)
+                if (value <= 0)
                 {
-                    _capacity = value;
+                    throw new ArgumentNullException();
                 }
                 else
                 {
-                    throw new ArgumentNullException();
+                    _capacity = value;
                 }
             }
         }
         public int Power
         {
-            get
-            {
-                return _power;
-            }
+            get => _power;
             set
             {
-                if (value > 0)
+                if (value <= 0)
                 {
-                    _power = value;
+                    throw new ArgumentNullException();
                 }
                 else
                 {
-                    throw new ArgumentNullException();
+                    _power = value;
                 }
             }
         }
 
-        public Engine(int power, double capacity, string typeEngine, string serialNumber)
+        public Engine(typeEngine typeEngine, int power, double capacity, string serialNumber)
         {
+            this.typeEngine = typeEngine;
             Power = power;
             Capacity = capacity;
-            _typeEngine = typeEngine;
             _serialNumber = serialNumber;
-            ChechAvailableSymbols();
         }
 
         public virtual string GetInfo()
         {
-            return $"Engine power: {Power}, Engine capacity: {Capacity}, Type engine: {_typeEngine} , Serial Number: {_serialNumber}";
+            return $"Engine power: {Power}, Engine capacity: {Capacity}, Type engine: {typeEngine} , Serial Number: {_serialNumber}";
         }
         private void ChechAvailableSymbols()
         {
-            foreach (var chars in _typeEngine)
-            {
-                if (!(Char.IsLetterOrDigit(chars)))
-                {
-                    throw new FormatException();
-                }
-            }
             foreach (var chars in _serialNumber)
             {
                 if (!(Char.IsLetterOrDigit(chars)))
