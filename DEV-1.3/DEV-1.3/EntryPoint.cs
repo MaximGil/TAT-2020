@@ -19,6 +19,7 @@ namespace DEV_1._3
 
                 List<Vehicle> vehicles = new List<Vehicle>();
                 var petrolCar = new CarPetrolFactory();
+<<<<<<< HEAD
                 var carManualFactory = new CarManualFactory();
                 var truckManualTransmissionFactory = new TruckManualTransmissionFactory();
                 var busFactory = new BusFactory();
@@ -31,6 +32,10 @@ namespace DEV_1._3
                 vehicles.Add(busFactory.Create());
                 vehicles.Add(truckManualTransmissionFactory.Create());
                 vehicles.Add(truckManualTransmissionFactory.Create());
+=======
+                Vehicle vehicle = petrolCar.Create();
+                Console.WriteLine(vehicle.GetInfo());
+>>>>>>> a1d238b5053a2e39b52834450d5bcb3fb4bcb1e8
 
 
             }

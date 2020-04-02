@@ -54,7 +54,11 @@
     <Compile Include="IVehicleFactory.cs" />
     <Compile Include="Moped.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="TruckManualTransmissionFactory.cs" />
+=======
+    <Compile Include="TrackManualTransmissionFactory.cs" />
+>>>>>>> a1d238b5053a2e39b52834450d5bcb3fb4bcb1e8
     <Compile Include="Transmission.cs" />
     <Compile Include="Truck.cs" />
     <Compile Include="Vehicle.cs" />
