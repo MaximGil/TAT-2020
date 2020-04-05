@@ -8,13 +8,13 @@ namespace DEV_1._4
     {
         Coordinate startPosition;
         double _speed = Randomizer.rnd.Next(minSpeed, maxSpeed);
-        readonly static int minSpeed = 0;
-        readonly static int maxSpeed = 20;
+        readonly static int minSpeed = 0; // km/h
+        readonly static int maxSpeed = 20; // km/h
 
         public Bird(Coordinate coordinate)
         {
             this.startPosition = coordinate;
-            if (_speed == 0)
+            if (_speed == minSpeed)
             {
                 throw new ArgumentNullException();
             }
@@ -38,10 +38,10 @@ namespace DEV_1._4
             }
         }
         /// <summary>
-        /// the time that the bird flew. Got it by simply dividing the distance by speed
+        /// the time that the bird flew in hours. Got it by simply dividing the distance by speed 
         /// </summary>
         /// <param name="inputCoordinate">Arrival point</param>
-        /// <returns>Returns flight time</returns>
+        /// <returns>Returns flight time </returns>
         public double GetFlyTime(Coordinate inputCoordinate)
         {
             if (this.startPosition.GetDistance(inputCoordinate) == 0 )

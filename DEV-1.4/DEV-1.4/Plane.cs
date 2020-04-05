@@ -7,16 +7,14 @@ namespace DEV_1._4
     {
         Coordinate coordinate;
         private double speed = 200.0;
-        readonly static double intervalDistance = 10.0;
-        readonly static double increaseSpeed = 10.0;
-        readonly static double maxAvailableSpeed = 500;
-        double time;
-        double distance;
+        readonly static double intervalDistance = 10.0; // km
+        readonly static double increaseSpeed = 10.0; // km/h
+        readonly static double maxAvailableSpeed = 500; // km/h
 
         public Plane(Coordinate coordinate)
         {
             this.coordinate = coordinate;
-           
+
         }
 
         public void FlyTo(Coordinate inputCoordinate)
@@ -31,17 +29,18 @@ namespace DEV_1._4
             }
         }
         /// <summary>
-        /// Getting airplane flight time
+        /// Getting airplane flight time in hours
         /// </summary>
         /// <param name="inputCoordinate">Arrival point</param>
         /// <returns>return flying time</returns>
         public double GetFlyTime(Coordinate inputCoordinate)
         {
-            distance = this.coordinate.GetDistance(inputCoordinate);
+            double distance = this.coordinate.GetDistance(inputCoordinate);
+            double time = 0;
             for (double i = intervalDistance; i < distance; i += intervalDistance) //in cycle check how many intervals when speed increase
             {                                                                       // and  get the time for which plane flew this interval 
-                time += intervalDistance / speed; 
-                speed += increaseSpeed;    
+                time += intervalDistance / speed;
+                speed += increaseSpeed;
             }
             if (speed >= maxAvailableSpeed)
             {

@@ -5,12 +5,12 @@ namespace DEV_1._4
 {
   public  class Drone : IFlyable
     {
-        readonly static double intervalTime = 0.16666666667;
-        readonly static double waitingTime = 0.0166666667;
+        readonly static double intervalTime = 0.16666666667; // in hours
+        readonly static double waitingTime = 0.0166666667; // in hours
         Coordinate startPoint;
         private double speed = Randomizer.rnd.Next(minSpeed, maxSpeed);
-        readonly static int minSpeed = 5;
-        readonly static int maxSpeed = 35;
+        readonly static int minSpeed = 5; // km/h
+        readonly static int maxSpeed = 35; // km/h
         double distance;
         double time;
 
@@ -35,10 +35,10 @@ namespace DEV_1._4
             }
         }
         /// <summary>
-        /// Getting drone flight time
+        /// Getting drone flight time in hours
         /// </summary>
         /// <param name="inputCoordinate">Arrival point</param>
-        /// <returns>return flying time</returns>
+        /// <returns>return flying time </returns>
         public double GetFlyTime(Coordinate inputCoordinate)
         {
             distance = this.startPoint.GetDistance(inputCoordinate);
@@ -51,9 +51,7 @@ namespace DEV_1._4
             {
                 time += waitingTime;
             }
-            //int countInterval = (int)(time / intervalTime); // second variant 
-            //double time2 = time;
-            //time2 += countInterval * waitingTime;
+
             return time;
 
         }
