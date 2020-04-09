@@ -74,8 +74,8 @@ namespace DEV_2._1.Receiver
                     totalSum += (double)element.Element("cost");
                     countAutos++;
                 }
-                else throw new ArgumentNullException();
             }
+
             averageTypePrice = totalSum / countAutos;
             Console.WriteLine($"average type price is: {averageTypePrice}");
         }
