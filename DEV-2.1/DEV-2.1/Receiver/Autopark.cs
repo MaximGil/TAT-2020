@@ -3,6 +3,7 @@ using System.Xml.Linq;
 
 namespace DEV_2._1.Receiver
 {
+    [Serializable]
     class Autopark
     {
         private static Autopark _instance;
