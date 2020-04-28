@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<autos>
+  <Autos name="Skoda">
+    <make>Rapid</make>
+    <count>123</count>
+    <cost>16000</cost>
+  </Autos>
+  <Autos name="Skoda">
+    <make>Octavia</make>
+    <count>100</count>
+    <cost>21000</cost>
+  </Autos>
+  <Autos name="BMW">
+    <make>530d</make>
+    <count>23</count>
+    <cost>20000</cost>
+  </Autos>
+   <Autos name="BMW">
+    <make>X5M</make>
+    <count>15</count>
+    <cost>40000</cost>
+  </Autos>
+  <Autos name="Audi">
+    <make>A6</make>
+    <count>223</count>
+    <cost>20000</cost>
+  </Autos>
+  <Autos name="Audi">
+    <make>A5</make>
+    <count>243</count>
+    <cost>15000</cost>
+  </Autos>
+  <Autos name="Mercedes">
+    <make>C63</make>
+    <count>8</count>
+    <cost>27000</cost>
+    <cost>27000</cost>
+  </Autos>
+</autos>

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5ABD994E-1E39-4A50-ABFD-65BCAA902784}</ProjectGuid>
+    <ProjectGuid>{DB40ACC9-02EF-41A2-88B5-E6E44E48F8D9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DEV_1._2</RootNamespace>
-    <AssemblyName>DEV-1.2</AssemblyName>
+    <RootNamespace>DEV_2._1</RootNamespace>
+    <AssemblyName>DEV-2.1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Converter.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Commands\AverageTypePriceCommand.cs" />
+    <Compile Include="Commands\AverigePriseCommand.cs" />
+    <Compile Include="Commands\CountAllAutosCommand.cs" />
+    <Compile Include="Commands\CountTypesCommand.cs" />
+    <Compile Include="ICommand.cs" />
+    <Compile Include="Invoker\Manager.cs" />
+    <Compile Include="EntryPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Receiver\Autopark.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
