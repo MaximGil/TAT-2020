@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5ABD994E-1E39-4A50-ABFD-65BCAA902784}</ProjectGuid>
+    <ProjectGuid>{A927B5DA-C4EC-44C6-9206-F954CB11090C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DEV_1._2</RootNamespace>
-    <AssemblyName>DEV-1.2</AssemblyName>
+    <RootNamespace>DEV_1._3</RootNamespace>
+    <AssemblyName>DEV-1.3</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Converter.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Bus.cs" />
+    <Compile Include="BusFactory.cs" />
+    <Compile Include="Car.cs" />
+    <Compile Include="CarManualFactory.cs" />
+    <Compile Include="CarPetrolFactory.cs" />
+    <Compile Include="Chassis.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="EntryPoint.cs" />
+    <Compile Include="IVehicleFactory.cs" />
+    <Compile Include="Moped.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TrackManualTransmissionFactory.cs" />
+    <Compile Include="Transmission.cs" />
+    <Compile Include="Truck.cs" />
+    <Compile Include="Vehicle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
