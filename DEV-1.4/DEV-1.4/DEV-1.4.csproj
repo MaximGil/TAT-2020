@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A927B5DA-C4EC-44C6-9206-F954CB11090C}</ProjectGuid>
+    <ProjectGuid>{3B67143F-2349-4D90-AC64-AD86BFB5BEB1}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DEV_1._3</RootNamespace>
-    <AssemblyName>DEV-1.3</AssemblyName>
+    <RootNamespace>DEV_1._4</RootNamespace>
+    <AssemblyName>DEV-1.4</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,21 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bus.cs" />
-    <Compile Include="BusFactory.cs" />
-    <Compile Include="Car.cs" />
-    <Compile Include="CarManualFactory.cs" />
-    <Compile Include="CarPetrolFactory.cs" />
-    <Compile Include="Chassis.cs" />
-    <Compile Include="Engine.cs" />
+    <Compile Include="Bird.cs" />
+    <Compile Include="Coordinate.cs" />
+    <Compile Include="Drone.cs" />
     <Compile Include="EntryPoint.cs" />
-    <Compile Include="IVehicleFactory.cs" />
-    <Compile Include="Moped.cs" />
+    <Compile Include="IFlyable.cs" />
+    <Compile Include="Plane.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrackManualTransmissionFactory.cs" />
-    <Compile Include="Transmission.cs" />
-    <Compile Include="Truck.cs" />
-    <Compile Include="Vehicle.cs" />
+    <Compile Include="Randomizer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

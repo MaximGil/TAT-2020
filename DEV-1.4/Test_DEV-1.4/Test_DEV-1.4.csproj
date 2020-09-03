@@ -6,11 +6,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{450B6690-0946-48E1-879D-A369259774AB}</ProjectGuid>
+    <ProjectGuid>{BA0025D1-C716-47C1-93AF-33DE0A111F36}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DEV_1._3_Test</RootNamespace>
-    <AssemblyName>DEV-1.3_Test</AssemblyName>
+    <RootNamespace>Test_DEV_1._4</RootNamespace>
+    <AssemblyName>Test_DEV-1.4</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -53,22 +53,19 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TestEngine.cs" />
+    <Compile Include="TestBird.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestTransmission.cs" />
-    <Compile Include="TestChassis.cs" />
-    <Compile Include="TestCar.cs" />
-    <Compile Include="TestBus.cs" />
-    <Compile Include="TestTruck.cs" />
-    <Compile Include="TestMoped.cs" />
+    <Compile Include="TestCoordinate.cs" />
+    <Compile Include="TestDrone.cs" />
+    <Compile Include="TestPlane.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DEV-1.3\DEV-1.3.csproj">
-      <Project>{a927b5da-c4ec-44c6-9206-f954cb11090c}</Project>
-      <Name>DEV-1.3</Name>
+    <ProjectReference Include="..\DEV-1.4\DEV-1.4.csproj">
+      <Project>{3b67143f-2349-4d90-ac64-ad86bfb5beb1}</Project>
+      <Name>DEV-1.4</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
