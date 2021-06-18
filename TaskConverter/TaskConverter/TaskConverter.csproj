@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A927B5DA-C4EC-44C6-9206-F954CB11090C}</ProjectGuid>
+    <ProjectGuid>{7400D111-AAA4-48D1-9679-39D04C7477B9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DEV_1._3</RootNamespace>
-    <AssemblyName>DEV-1.3</AssemblyName>
+    <RootNamespace>TaskConverter</RootNamespace>
+    <AssemblyName>TaskConverter</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,24 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bus.cs" />
-    <Compile Include="BusFactory.cs" />
-    <Compile Include="Car.cs" />
-    <Compile Include="CarManualFactory.cs" />
-    <Compile Include="CarPetrolFactory.cs" />
-    <Compile Include="Chassis.cs" />
-    <Compile Include="Engine.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="ConverterFactory.cs" />
     <Compile Include="EntryPoint.cs" />
-    <Compile Include="IVehicleFactory.cs" />
-    <Compile Include="Moped.cs" />
+    <Compile Include="IConverter.cs" />
+    <Compile Include="IConverterFactory.cs" />
+    <Compile Include="LengthConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrackManualTransmissionFactory.cs" />
-    <Compile Include="Transmission.cs" />
-    <Compile Include="Truck.cs" />
-    <Compile Include="Vehicle.cs" />
+    <Compile Include="TemperatureConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
